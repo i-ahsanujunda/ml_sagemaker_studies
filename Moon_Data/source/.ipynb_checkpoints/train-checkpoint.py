@@ -77,7 +77,7 @@ def train(model, train_loader, epochs, optimizer, criterion, device):
         total_loss = 0
         for batch_idx, (data, target) in enumerate(train_loader, 1):
             # prep data
-            data, target = data.to(device), target.to(device).long()
+            data, target = data.to(device), target.to(device)
             optimizer.zero_grad() # zero accumulated gradients
             # get output of SimpleNet
             output = model(data)
@@ -142,9 +142,9 @@ if __name__ == '__main__':
     # Model parameters
     parser.add_argument('--input_dim', type=int, default=2, metavar='N',
                         help='size of input dimension (default: 2)')
-    parser.add_argument('--hidden_dim', type=int, default=2, metavar='N',
+    parser.add_argument('--hidden_dim', type=int, default=20, metavar='N',
                         help='ssize of hidden dimension (default: 2)')
-    parser.add_argument('--output_dim', type=int, default=5000, metavar='N',
+    parser.add_argument('--output_dim', type=int, default=1, metavar='N',
                         help='size of output dimension (default: 2)')
     
     args = parser.parse_args()
@@ -170,7 +170,7 @@ if __name__ == '__main__':
 
     ## TODO: Define an optimizer and loss function for training
     optimizer = optim.SGD(model.parameters(), lr=0.003)
-    criterion = nn.NLLLoss()
+    criterion = nn.BCELoss()
 
     
     # Trains the model (given line of code, which calls the above training function)
