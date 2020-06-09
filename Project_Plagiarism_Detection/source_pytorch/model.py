@@ -30,7 +30,7 @@ class BinaryClassifier(nn.Module):
         self.fc2 = nn.Linear(hidden_dim, hidden_dim - 10)
         self.drop1 = nn.Dropout(0.3)
         self.fc3 = nn.Linear(hidden_dim - 10, output_dim)
-        self.drop2 = nn.Dropout(0.3)
+        self.drop2 = nn.Dropout(0.4)
         self.sig = nn.Sigmoid()
         
 
@@ -45,8 +45,7 @@ class BinaryClassifier(nn.Module):
         # define the feedforward behavior        
         x = F.relu(self.fc1(x)) # activation on hidden layer 1
         x = self.drop1(x)
-        x = self.fc2(x)
-        x = F.relu(self.fc2(x)) # activation on hidden layer 2
+        x = F.tanh(self.fc2(x)) # activation on hidden layer 2
         x = self.drop2(x)
         x = self.fc3(x)
         return self.sig(x)
