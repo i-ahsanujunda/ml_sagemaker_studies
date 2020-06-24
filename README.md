@@ -2,7 +2,7 @@
 
 This repository contains code and associated files for deploying ML models using AWS SageMaker, several sample notebooks exist spanning various case studies, code exercises, and project files that will illustrate parts of the ML workflow and give enough practice deploying a variety of ML algorithms on Sagemaker.
 
-### Tutorials
+### Case Study Samples
 
 * [Population Segmentation](./Population_Segmentation): Learn how to build and deploy unsupervised models in SageMaker. In this example, you'll cluster US Census data; reducing the dimensionality of data using PCA and the clustering the resulting, top components with k-means.
 * [Payment Fraud Detection](./Payment_Fraud_Detection): Learn how to build and deploy a supervised, LinearLearner model in SageMaker. You'll tune a model and handle a case of class imbalance to train a model to detect cases of credit card fraud.
@@ -11,7 +11,7 @@ This repository contains code and associated files for deploying ML models using
 
 ### Project
 
-[Plagiarism Detector](./Project_Plagiarism_Detection): Build an end-to-end plagiarism classification model. All skills from previous learnings are applied here in the process of cleaning data, extract meaningful features, and deploy a plagiarism classifier in SageMaker.
+[Plagiarism Detector](./Project_Plagiarism_Detection): Build an end-to-end plagiarism classification model. All skills shown on the previous learnings are applied here in the process of cleaning data, extract meaningful features, and deploy a plagiarism classifier in SageMaker.
 
 ![Examples of dimensionality reduction and time series prediction](./Time_Series_Forecasting/notebook_ims/example_applications.png)
 
